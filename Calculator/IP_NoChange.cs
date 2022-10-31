@@ -13,7 +13,7 @@ namespace Calculator
     public partial class IP_NoChange : UserControl
     {
         public List<Button> _theList_btn = new List<Button>();
-        string achtBitEinsIP, achtBitZweiIP, achtBitDreiIP, achtBitVierIP;
+        string eightBitOneIP, eightBitTwoIP, eightBitThreeIP, eightBitFourIP;
         private bool clearAll;
 
         public bool ClearAll
@@ -49,9 +49,9 @@ namespace Calculator
         }
         private void Clear()
         {
-            achtBitEinsIP = "0"; achtBitZweiIP = "0"; achtBitDreiIP = "0"; achtBitVierIP = "0";
+            eightBitOneIP = "0"; eightBitTwoIP = "0"; eightBitThreeIP = "0"; eightBitFourIP = "0";
 
-            for (int i = 1; i < 33; i++) // mit 0 auffüllen
+            for (int i = 1; i < 33; i++) // fill with "0" 
             {
                 array32_IP[i] = "0";
                 ValueArray[i] = "0";
@@ -63,38 +63,38 @@ namespace Calculator
             textBoxIP4.Text = "0";
         }
 
-        private void dualToDecStartIP(object sender, EventArgs e)
+        private void DualToDecStartIP(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            achtBitEinsIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
-            achtBitZweiIP = "0";
-            achtBitDreiIP = "0";
-            achtBitVierIP = "0";
+            eightBitOneIP = "0"; // String chain 8-bit (8-Stellen)
+            eightBitTwoIP = "0";
+            eightBitThreeIP = "0";
+            eightBitFourIP = "0";
 
             for (int i = 1; i < 9; i++)
             {
-                achtBitEinsIP += array32_IP[i];
+                eightBitOneIP += array32_IP[i];
             }
-            textBoxIP1.Text = Convert.ToString(Convert.ToInt64(achtBitEinsIP, 2));
+            textBoxIP1.Text = Convert.ToString(Convert.ToInt64(eightBitOneIP, 2));
 
 
             for (int i = 9; i < 17; i++)
             {
-                achtBitZweiIP += array32_IP[i];
+                eightBitTwoIP += array32_IP[i];
             }
-            textBoxIP2.Text = Convert.ToString(Convert.ToInt64(achtBitZweiIP, 2));
+            textBoxIP2.Text = Convert.ToString(Convert.ToInt64(eightBitTwoIP, 2));
 
             for (int i = 17; i < 25; i++)
             {
-                achtBitDreiIP += array32_IP[i];
+                eightBitThreeIP += array32_IP[i];
             }
-            textBoxIP3.Text = Convert.ToString(Convert.ToInt64(achtBitDreiIP, 2));
+            textBoxIP3.Text = Convert.ToString(Convert.ToInt64(eightBitThreeIP, 2));
 
             for (int i = 25; i < 33; i++)
             {
-                achtBitVierIP += array32_IP[i];
+                eightBitFourIP += array32_IP[i];
             }
-            textBoxIP4.Text = Convert.ToString(Convert.ToInt64(achtBitVierIP, 2));
+            textBoxIP4.Text = Convert.ToString(Convert.ToInt64(eightBitFourIP, 2));
         }
 
         private string[] array32_IP; // = new string[33];

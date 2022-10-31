@@ -12,7 +12,7 @@ namespace Calculator
 {
     public partial class IP_Host : UserControl
     {
-        string achtBitEinsIP, achtBitZweiIP, achtBitDreiIP, achtBitVierIP;
+        string eightBitOneIP, eightBitTwoIP, eightBitThreeIP, eightBitFourIP;
         private bool clearAll;
         public int CIDR;
         public bool ClearAll
@@ -41,9 +41,9 @@ namespace Calculator
         public string[] array32_HostLast_BC;
         private void Clear()
         {
-            achtBitEinsIP = "0"; achtBitZweiIP = "0"; achtBitDreiIP = "0"; achtBitVierIP = "0";
+            eightBitOneIP = "0"; eightBitTwoIP = "0"; eightBitThreeIP = "0"; eightBitFourIP = "0";
 
-            for (int i = 1; i < 33; i++) // mit 0 auffüllen
+            for (int i = 1; i < 33; i++) // fill with "0" 
             {
                 array32_HostOne_NetID[i] = "0";
                 array32_HostLast_BC[i] = "0";
@@ -72,23 +72,23 @@ namespace Calculator
         }
         public void Addition(object sender, EventArgs e)
         {
-            string binarHostOne = "";
-            string binarHostLast = "";
+            string binaryHostOne = "";
+            string binaryHostLast = "";
             string one = "1";
             for (int i = 1; i < 33; i++)
             {
-                binarHostOne += array32_HostOne_NetID[i];
-                binarHostLast += array32_HostLast_BC[i];
+                binaryHostOne += array32_HostOne_NetID[i];
+                binaryHostLast += array32_HostLast_BC[i];
             }
 
-            int ergebnisHostOne = Convert.ToInt32(binarHostOne, 2) + Convert.ToInt32(one, 2);
-            int ergebnisHostLast = Convert.ToInt32(binarHostLast, 2) - Convert.ToInt32(one, 2);
+            int ergebnisHostOne = Convert.ToInt32(binaryHostOne, 2) + Convert.ToInt32(one, 2);
+            int ergebnisHostLast = Convert.ToInt32(binaryHostLast, 2) - Convert.ToInt32(one, 2);
 
-            binarHostOne = Convert.ToString(Convert.ToInt32(ergebnisHostOne), 2);
-            binarHostLast = Convert.ToString(Convert.ToInt32(ergebnisHostLast), 2);
+            binaryHostOne = Convert.ToString(Convert.ToInt32(ergebnisHostOne), 2);
+            binaryHostLast = Convert.ToString(Convert.ToInt32(ergebnisHostLast), 2);
 
-            char[] newBinaryHostOne = binarHostOne.ToCharArray();
-            char[] newBinaryHostLast = binarHostLast.ToCharArray();
+            char[] newBinaryHostOne = binaryHostOne.ToCharArray();
+            char[] newBinaryHostLast = binaryHostLast.ToCharArray();
             Array.Reverse(newBinaryHostOne);
             Array.Reverse(newBinaryHostLast);
 
@@ -105,7 +105,7 @@ namespace Calculator
                 array32_HostLast_BC[i] = Convert.ToString(newBinaryHostLast[RangeNumber - i]);
             }
         }
-        private void dualToDecStartIPHostOne(object sender, EventArgs e)
+        private void DualToDecStartIPHostOne(object sender, EventArgs e)
         {
             if (CIDR > 30)
             {
@@ -118,59 +118,59 @@ namespace Calculator
                 Addition(sender, e);
 
                 Button btn = (Button)sender;
-                achtBitEinsIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
-                achtBitZweiIP = "0";
-                achtBitDreiIP = "0";
-                achtBitVierIP = "0";
+                eightBitOneIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
+                eightBitTwoIP = "0";
+                eightBitThreeIP = "0";
+                eightBitFourIP = "0";
 
                 //----------------------    Host One
                 for (int i = 1; i < 9; i++)
                 {
-                    achtBitEinsIP += array32_HostOne_NetID[i];
+                    eightBitOneIP += array32_HostOne_NetID[i];
                 }
-                textBoxHostOne1.Text = Convert.ToString(Convert.ToInt64(achtBitEinsIP, 2));
+                textBoxHostOne1.Text = Convert.ToString(Convert.ToInt64(eightBitOneIP, 2));
                 for (int i = 9; i < 17; i++)
                 {
-                    achtBitZweiIP += array32_HostOne_NetID[i];
+                    eightBitTwoIP += array32_HostOne_NetID[i];
                 }
-                textBoxHostOne2.Text = Convert.ToString(Convert.ToInt64(achtBitZweiIP, 2));
+                textBoxHostOne2.Text = Convert.ToString(Convert.ToInt64(eightBitTwoIP, 2));
                 for (int i = 17; i < 25; i++)
                 {
-                    achtBitDreiIP += array32_HostOne_NetID[i];
+                    eightBitThreeIP += array32_HostOne_NetID[i];
                 }
-                textBoxHostOne3.Text = Convert.ToString(Convert.ToInt64(achtBitDreiIP, 2));
+                textBoxHostOne3.Text = Convert.ToString(Convert.ToInt64(eightBitThreeIP, 2));
                 for (int i = 25; i < 33; i++)
                 {
-                    achtBitVierIP += array32_HostOne_NetID[i];
+                    eightBitFourIP += array32_HostOne_NetID[i];
                 }
-                textBoxHostOne4.Text = Convert.ToString(Convert.ToInt64(achtBitVierIP, 2));
+                textBoxHostOne4.Text = Convert.ToString(Convert.ToInt64(eightBitFourIP, 2));
 
                 // -------------------------    Host last
-                achtBitEinsIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
-                achtBitZweiIP = "0";
-                achtBitDreiIP = "0";
-                achtBitVierIP = "0";
+                eightBitOneIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
+                eightBitTwoIP = "0";
+                eightBitThreeIP = "0";
+                eightBitFourIP = "0";
 
                 for (int i = 1; i < 9; i++)
                 {
-                    achtBitEinsIP += array32_HostLast_BC[i];
+                    eightBitOneIP += array32_HostLast_BC[i];
                 }
-                textBoxHostLast1.Text = Convert.ToString(Convert.ToInt64(achtBitEinsIP, 2));
+                textBoxHostLast1.Text = Convert.ToString(Convert.ToInt64(eightBitOneIP, 2));
                 for (int i = 9; i < 17; i++)
                 {
-                    achtBitZweiIP += array32_HostLast_BC[i];
+                    eightBitTwoIP += array32_HostLast_BC[i];
                 }
-                textBoxHostLast2.Text = Convert.ToString(Convert.ToInt64(achtBitZweiIP, 2));
+                textBoxHostLast2.Text = Convert.ToString(Convert.ToInt64(eightBitTwoIP, 2));
                 for (int i = 17; i < 25; i++)
                 {
-                    achtBitDreiIP += array32_HostLast_BC[i];
+                    eightBitThreeIP += array32_HostLast_BC[i];
                 }
-                textBoxHostLast3.Text = Convert.ToString(Convert.ToInt64(achtBitDreiIP, 2));
+                textBoxHostLast3.Text = Convert.ToString(Convert.ToInt64(eightBitThreeIP, 2));
                 for (int i = 25; i < 33; i++)
                 {
-                    achtBitVierIP += array32_HostLast_BC[i];
+                    eightBitFourIP += array32_HostLast_BC[i];
                 }
-                textBoxHostLast4.Text = Convert.ToString(Convert.ToInt64(achtBitVierIP, 2));
+                textBoxHostLast4.Text = Convert.ToString(Convert.ToInt64(eightBitFourIP, 2));
             }
 
         }

@@ -77,7 +77,7 @@ namespace Calculator
             this.btn32.Tag = "32";
             this.btn32.Text = "0";
             this.btn32.UseVisualStyleBackColor = true;
-            this.btn32.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn32.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn31
             // 
@@ -89,7 +89,7 @@ namespace Calculator
             this.btn31.Tag = "31";
             this.btn31.Text = "0";
             this.btn31.UseVisualStyleBackColor = true;
-            this.btn31.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn31.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn30
             // 
@@ -101,7 +101,7 @@ namespace Calculator
             this.btn30.Tag = "30";
             this.btn30.Text = "0";
             this.btn30.UseVisualStyleBackColor = true;
-            this.btn30.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn30.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn29
             // 
@@ -113,7 +113,7 @@ namespace Calculator
             this.btn29.Tag = "29";
             this.btn29.Text = "0";
             this.btn29.UseVisualStyleBackColor = true;
-            this.btn29.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn29.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn28
             // 
@@ -125,7 +125,7 @@ namespace Calculator
             this.btn28.Tag = "28";
             this.btn28.Text = "0";
             this.btn28.UseVisualStyleBackColor = true;
-            this.btn28.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn28.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn27
             // 
@@ -137,7 +137,7 @@ namespace Calculator
             this.btn27.Tag = "27";
             this.btn27.Text = "0";
             this.btn27.UseVisualStyleBackColor = true;
-            this.btn27.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn27.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn26
             // 
@@ -149,7 +149,7 @@ namespace Calculator
             this.btn26.Tag = "26";
             this.btn26.Text = "0";
             this.btn26.UseVisualStyleBackColor = true;
-            this.btn26.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn26.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn25
             // 
@@ -161,7 +161,7 @@ namespace Calculator
             this.btn25.Tag = "25";
             this.btn25.Text = "0";
             this.btn25.UseVisualStyleBackColor = true;
-            this.btn25.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn25.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // textBoxIP4
             // 
@@ -171,8 +171,8 @@ namespace Calculator
             this.textBoxIP4.TabIndex = 221;
             this.textBoxIP4.Tag = "4";
             this.textBoxIP4.Text = "0";
-            this.textBoxIP4.TextChanged += new System.EventHandler(this.decToDualIP);
-            this.textBoxIP4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxIP4.TextChanged += new System.EventHandler(this.DecToDualIP);
+            this.textBoxIP4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn24
             // 
@@ -184,7 +184,7 @@ namespace Calculator
             this.btn24.Tag = "24";
             this.btn24.Text = "0";
             this.btn24.UseVisualStyleBackColor = true;
-            this.btn24.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn24.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn23
             // 
@@ -196,7 +196,7 @@ namespace Calculator
             this.btn23.Tag = "23";
             this.btn23.Text = "0";
             this.btn23.UseVisualStyleBackColor = true;
-            this.btn23.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn23.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn22
             // 
@@ -208,7 +208,7 @@ namespace Calculator
             this.btn22.Tag = "22";
             this.btn22.Text = "0";
             this.btn22.UseVisualStyleBackColor = true;
-            this.btn22.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn22.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn21
             // 
@@ -220,7 +220,7 @@ namespace Calculator
             this.btn21.Tag = "21";
             this.btn21.Text = "0";
             this.btn21.UseVisualStyleBackColor = true;
-            this.btn21.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn21.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn20
             // 
@@ -232,7 +232,7 @@ namespace Calculator
             this.btn20.Tag = "20";
             this.btn20.Text = "0";
             this.btn20.UseVisualStyleBackColor = true;
-            this.btn20.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn20.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn19
             // 
@@ -244,7 +244,7 @@ namespace Calculator
             this.btn19.Tag = "19";
             this.btn19.Text = "0";
             this.btn19.UseVisualStyleBackColor = true;
-            this.btn19.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn19.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn18
             // 
@@ -256,7 +256,7 @@ namespace Calculator
             this.btn18.Tag = "18";
             this.btn18.Text = "0";
             this.btn18.UseVisualStyleBackColor = true;
-            this.btn18.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn18.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn17
             // 
@@ -268,7 +268,7 @@ namespace Calculator
             this.btn17.Tag = "17";
             this.btn17.Text = "0";
             this.btn17.UseVisualStyleBackColor = true;
-            this.btn17.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn17.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // textBoxIP3
             // 
@@ -278,8 +278,8 @@ namespace Calculator
             this.textBoxIP3.TabIndex = 212;
             this.textBoxIP3.Tag = "3";
             this.textBoxIP3.Text = "0";
-            this.textBoxIP3.TextChanged += new System.EventHandler(this.decToDualIP);
-            this.textBoxIP3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxIP3.TextChanged += new System.EventHandler(this.DecToDualIP);
+            this.textBoxIP3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn16
             // 
@@ -291,7 +291,7 @@ namespace Calculator
             this.btn16.Tag = "16";
             this.btn16.Text = "0";
             this.btn16.UseVisualStyleBackColor = true;
-            this.btn16.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn16.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn15
             // 
@@ -303,7 +303,7 @@ namespace Calculator
             this.btn15.Tag = "15";
             this.btn15.Text = "0";
             this.btn15.UseVisualStyleBackColor = true;
-            this.btn15.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn15.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn14
             // 
@@ -315,7 +315,7 @@ namespace Calculator
             this.btn14.Tag = "14";
             this.btn14.Text = "0";
             this.btn14.UseVisualStyleBackColor = true;
-            this.btn14.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn14.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn13
             // 
@@ -327,7 +327,7 @@ namespace Calculator
             this.btn13.Tag = "13";
             this.btn13.Text = "0";
             this.btn13.UseVisualStyleBackColor = true;
-            this.btn13.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn13.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn12
             // 
@@ -339,7 +339,7 @@ namespace Calculator
             this.btn12.Tag = "12";
             this.btn12.Text = "0";
             this.btn12.UseVisualStyleBackColor = true;
-            this.btn12.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn12.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn11
             // 
@@ -351,7 +351,7 @@ namespace Calculator
             this.btn11.Tag = "11";
             this.btn11.Text = "0";
             this.btn11.UseVisualStyleBackColor = true;
-            this.btn11.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn11.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn10
             // 
@@ -363,7 +363,7 @@ namespace Calculator
             this.btn10.Tag = "10";
             this.btn10.Text = "0";
             this.btn10.UseVisualStyleBackColor = true;
-            this.btn10.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn10.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn9
             // 
@@ -375,7 +375,7 @@ namespace Calculator
             this.btn9.Tag = "9";
             this.btn9.Text = "0";
             this.btn9.UseVisualStyleBackColor = true;
-            this.btn9.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn9.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // textBoxIP2
             // 
@@ -385,8 +385,8 @@ namespace Calculator
             this.textBoxIP2.TabIndex = 203;
             this.textBoxIP2.Tag = "2";
             this.textBoxIP2.Text = "0";
-            this.textBoxIP2.TextChanged += new System.EventHandler(this.decToDualIP);
-            this.textBoxIP2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxIP2.TextChanged += new System.EventHandler(this.DecToDualIP);
+            this.textBoxIP2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn8
             // 
@@ -398,7 +398,7 @@ namespace Calculator
             this.btn8.Tag = "8";
             this.btn8.Text = "0";
             this.btn8.UseVisualStyleBackColor = true;
-            this.btn8.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn8.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn7
             // 
@@ -410,7 +410,7 @@ namespace Calculator
             this.btn7.Tag = "7";
             this.btn7.Text = "0";
             this.btn7.UseVisualStyleBackColor = true;
-            this.btn7.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn7.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn6
             // 
@@ -422,7 +422,7 @@ namespace Calculator
             this.btn6.Tag = "6";
             this.btn6.Text = "0";
             this.btn6.UseVisualStyleBackColor = true;
-            this.btn6.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn6.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn5
             // 
@@ -434,7 +434,7 @@ namespace Calculator
             this.btn5.Tag = "5";
             this.btn5.Text = "0";
             this.btn5.UseVisualStyleBackColor = true;
-            this.btn5.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn5.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn4
             // 
@@ -446,7 +446,7 @@ namespace Calculator
             this.btn4.Tag = "4";
             this.btn4.Text = "0";
             this.btn4.UseVisualStyleBackColor = true;
-            this.btn4.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn4.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn3
             // 
@@ -458,7 +458,7 @@ namespace Calculator
             this.btn3.Tag = "3";
             this.btn3.Text = "0";
             this.btn3.UseVisualStyleBackColor = true;
-            this.btn3.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn3.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn2
             // 
@@ -470,7 +470,7 @@ namespace Calculator
             this.btn2.Tag = "2";
             this.btn2.Text = "0";
             this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn2.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // btn1
             // 
@@ -482,7 +482,7 @@ namespace Calculator
             this.btn1.Tag = "1";
             this.btn1.Text = "0";
             this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.dualToDecStartIP);
+            this.btn1.Click += new System.EventHandler(this.DualToDecStartIP);
             // 
             // textBoxIP1
             // 
@@ -492,8 +492,8 @@ namespace Calculator
             this.textBoxIP1.TabIndex = 194;
             this.textBoxIP1.Tag = "1";
             this.textBoxIP1.Text = "0";
-            this.textBoxIP1.TextChanged += new System.EventHandler(this.decToDualIP);
-            this.textBoxIP1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxIP1.TextChanged += new System.EventHandler(this.DecToDualIP);
+            this.textBoxIP1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // IP_Changeable
             // 

@@ -31,9 +31,9 @@ namespace Calculator
         {
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxAnzahlHosts = new System.Windows.Forms.TextBox();
+            this.textBoxNumberHosts = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxAnzahlIPAdressden = new System.Windows.Forms.TextBox();
+            this.textBoxNumberIPAddreses = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCIDR = new System.Windows.Forms.TextBox();
@@ -95,13 +95,13 @@ namespace Calculator
             // 
             // textBoxAnzahlHosts
             // 
-            this.textBoxAnzahlHosts.Enabled = false;
-            this.textBoxAnzahlHosts.Location = new System.Drawing.Point(385, 56);
-            this.textBoxAnzahlHosts.Name = "textBoxAnzahlHosts";
-            this.textBoxAnzahlHosts.Size = new System.Drawing.Size(170, 20);
-            this.textBoxAnzahlHosts.TabIndex = 287;
-            this.textBoxAnzahlHosts.Tag = "1";
-            this.textBoxAnzahlHosts.Text = "0";
+            this.textBoxNumberHosts.Enabled = false;
+            this.textBoxNumberHosts.Location = new System.Drawing.Point(385, 56);
+            this.textBoxNumberHosts.Name = "textBoxAnzahlHosts";
+            this.textBoxNumberHosts.Size = new System.Drawing.Size(170, 20);
+            this.textBoxNumberHosts.TabIndex = 287;
+            this.textBoxNumberHosts.Tag = "1";
+            this.textBoxNumberHosts.Text = "0";
             // 
             // label10
             // 
@@ -114,13 +114,13 @@ namespace Calculator
             // 
             // textBoxAnzahlIPAdressden
             // 
-            this.textBoxAnzahlIPAdressden.Enabled = false;
-            this.textBoxAnzahlIPAdressden.Location = new System.Drawing.Point(100, 55);
-            this.textBoxAnzahlIPAdressden.Name = "textBoxAnzahlIPAdressden";
-            this.textBoxAnzahlIPAdressden.Size = new System.Drawing.Size(170, 20);
-            this.textBoxAnzahlIPAdressden.TabIndex = 285;
-            this.textBoxAnzahlIPAdressden.Tag = "1";
-            this.textBoxAnzahlIPAdressden.Text = "0";
+            this.textBoxNumberIPAddreses.Enabled = false;
+            this.textBoxNumberIPAddreses.Location = new System.Drawing.Point(100, 55);
+            this.textBoxNumberIPAddreses.Name = "textBoxAnzahlIPAdressden";
+            this.textBoxNumberIPAddreses.Size = new System.Drawing.Size(170, 20);
+            this.textBoxNumberIPAddreses.TabIndex = 285;
+            this.textBoxNumberIPAddreses.Tag = "1";
+            this.textBoxNumberIPAddreses.Text = "0";
             // 
             // label2
             // 
@@ -149,7 +149,7 @@ namespace Calculator
             this.textBoxCIDR.Tag = "4";
             this.textBoxCIDR.Text = "0";
             this.textBoxCIDR.TextChanged += new System.EventHandler(this.CalculateCIDR);
-            this.textBoxCIDR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxCIDR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn32
             // 
@@ -161,7 +161,7 @@ namespace Calculator
             this.btn32.Tag = "32";
             this.btn32.Text = "0";
             this.btn32.UseVisualStyleBackColor = true;
-            this.btn32.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn32.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn31
             // 
@@ -173,7 +173,7 @@ namespace Calculator
             this.btn31.Tag = "31";
             this.btn31.Text = "0";
             this.btn31.UseVisualStyleBackColor = true;
-            this.btn31.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn31.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn30
             // 
@@ -185,7 +185,7 @@ namespace Calculator
             this.btn30.Tag = "30";
             this.btn30.Text = "0";
             this.btn30.UseVisualStyleBackColor = true;
-            this.btn30.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn30.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn29
             // 
@@ -197,7 +197,7 @@ namespace Calculator
             this.btn29.Tag = "29";
             this.btn29.Text = "0";
             this.btn29.UseVisualStyleBackColor = true;
-            this.btn29.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn29.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn28
             // 
@@ -209,7 +209,7 @@ namespace Calculator
             this.btn28.Tag = "28";
             this.btn28.Text = "0";
             this.btn28.UseVisualStyleBackColor = true;
-            this.btn28.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn28.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn27
             // 
@@ -221,7 +221,7 @@ namespace Calculator
             this.btn27.Tag = "27";
             this.btn27.Text = "0";
             this.btn27.UseVisualStyleBackColor = true;
-            this.btn27.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn27.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn26
             // 
@@ -233,7 +233,7 @@ namespace Calculator
             this.btn26.Tag = "26";
             this.btn26.Text = "0";
             this.btn26.UseVisualStyleBackColor = true;
-            this.btn26.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn26.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn25
             // 
@@ -245,7 +245,7 @@ namespace Calculator
             this.btn25.Tag = "25";
             this.btn25.Text = "0";
             this.btn25.UseVisualStyleBackColor = true;
-            this.btn25.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn25.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // textBoxNetMask4
             // 
@@ -255,8 +255,8 @@ namespace Calculator
             this.textBoxNetMask4.TabIndex = 273;
             this.textBoxNetMask4.Tag = "4";
             this.textBoxNetMask4.Text = "0";
-            this.textBoxNetMask4.TextChanged += new System.EventHandler(this.decToDualMaske);
-            this.textBoxNetMask4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxNetMask4.TextChanged += new System.EventHandler(this.DecToDualMaske);
+            this.textBoxNetMask4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn24
             // 
@@ -268,7 +268,7 @@ namespace Calculator
             this.btn24.Tag = "24";
             this.btn24.Text = "0";
             this.btn24.UseVisualStyleBackColor = true;
-            this.btn24.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn24.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn23
             // 
@@ -280,7 +280,7 @@ namespace Calculator
             this.btn23.Tag = "23";
             this.btn23.Text = "0";
             this.btn23.UseVisualStyleBackColor = true;
-            this.btn23.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn23.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn22
             // 
@@ -292,7 +292,7 @@ namespace Calculator
             this.btn22.Tag = "22";
             this.btn22.Text = "0";
             this.btn22.UseVisualStyleBackColor = true;
-            this.btn22.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn22.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn21
             // 
@@ -304,7 +304,7 @@ namespace Calculator
             this.btn21.Tag = "21";
             this.btn21.Text = "0";
             this.btn21.UseVisualStyleBackColor = true;
-            this.btn21.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn21.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn20
             // 
@@ -316,7 +316,7 @@ namespace Calculator
             this.btn20.Tag = "20";
             this.btn20.Text = "0";
             this.btn20.UseVisualStyleBackColor = true;
-            this.btn20.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn20.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn19
             // 
@@ -328,7 +328,7 @@ namespace Calculator
             this.btn19.Tag = "19";
             this.btn19.Text = "0";
             this.btn19.UseVisualStyleBackColor = true;
-            this.btn19.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn19.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn18
             // 
@@ -340,7 +340,7 @@ namespace Calculator
             this.btn18.Tag = "18";
             this.btn18.Text = "0";
             this.btn18.UseVisualStyleBackColor = true;
-            this.btn18.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn18.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn17
             // 
@@ -352,7 +352,7 @@ namespace Calculator
             this.btn17.Tag = "17";
             this.btn17.Text = "0";
             this.btn17.UseVisualStyleBackColor = true;
-            this.btn17.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn17.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // textBoxNetMask3
             // 
@@ -362,8 +362,8 @@ namespace Calculator
             this.textBoxNetMask3.TabIndex = 264;
             this.textBoxNetMask3.Tag = "3";
             this.textBoxNetMask3.Text = "0";
-            this.textBoxNetMask3.TextChanged += new System.EventHandler(this.decToDualMaske);
-            this.textBoxNetMask3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxNetMask3.TextChanged += new System.EventHandler(this.DecToDualMaske);
+            this.textBoxNetMask3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn16
             // 
@@ -375,7 +375,7 @@ namespace Calculator
             this.btn16.Tag = "16";
             this.btn16.Text = "0";
             this.btn16.UseVisualStyleBackColor = true;
-            this.btn16.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn16.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn15
             // 
@@ -387,7 +387,7 @@ namespace Calculator
             this.btn15.Tag = "15";
             this.btn15.Text = "0";
             this.btn15.UseVisualStyleBackColor = true;
-            this.btn15.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn15.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn14
             // 
@@ -399,7 +399,7 @@ namespace Calculator
             this.btn14.Tag = "14";
             this.btn14.Text = "0";
             this.btn14.UseVisualStyleBackColor = true;
-            this.btn14.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn14.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn13
             // 
@@ -411,7 +411,7 @@ namespace Calculator
             this.btn13.Tag = "13";
             this.btn13.Text = "0";
             this.btn13.UseVisualStyleBackColor = true;
-            this.btn13.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn13.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn12
             // 
@@ -423,7 +423,7 @@ namespace Calculator
             this.btn12.Tag = "12";
             this.btn12.Text = "0";
             this.btn12.UseVisualStyleBackColor = true;
-            this.btn12.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn12.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn11
             // 
@@ -435,7 +435,7 @@ namespace Calculator
             this.btn11.Tag = "11";
             this.btn11.Text = "0";
             this.btn11.UseVisualStyleBackColor = true;
-            this.btn11.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn11.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn10
             // 
@@ -447,7 +447,7 @@ namespace Calculator
             this.btn10.Tag = "10";
             this.btn10.Text = "0";
             this.btn10.UseVisualStyleBackColor = true;
-            this.btn10.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn10.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn9
             // 
@@ -459,7 +459,7 @@ namespace Calculator
             this.btn9.Tag = "9";
             this.btn9.Text = "0";
             this.btn9.UseVisualStyleBackColor = true;
-            this.btn9.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn9.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // textBoxNetMask2
             // 
@@ -469,8 +469,8 @@ namespace Calculator
             this.textBoxNetMask2.TabIndex = 255;
             this.textBoxNetMask2.Tag = "2";
             this.textBoxNetMask2.Text = "0";
-            this.textBoxNetMask2.TextChanged += new System.EventHandler(this.decToDualMaske);
-            this.textBoxNetMask2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxNetMask2.TextChanged += new System.EventHandler(this.DecToDualMaske);
+            this.textBoxNetMask2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // btn8
             // 
@@ -482,7 +482,7 @@ namespace Calculator
             this.btn8.Tag = "8";
             this.btn8.Text = "0";
             this.btn8.UseVisualStyleBackColor = true;
-            this.btn8.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn8.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn7
             // 
@@ -494,7 +494,7 @@ namespace Calculator
             this.btn7.Tag = "7";
             this.btn7.Text = "0";
             this.btn7.UseVisualStyleBackColor = true;
-            this.btn7.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn7.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn6
             // 
@@ -506,7 +506,7 @@ namespace Calculator
             this.btn6.Tag = "6";
             this.btn6.Text = "0";
             this.btn6.UseVisualStyleBackColor = true;
-            this.btn6.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn6.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn5
             // 
@@ -518,7 +518,7 @@ namespace Calculator
             this.btn5.Tag = "5";
             this.btn5.Text = "0";
             this.btn5.UseVisualStyleBackColor = true;
-            this.btn5.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn5.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn4
             // 
@@ -530,7 +530,7 @@ namespace Calculator
             this.btn4.Tag = "4";
             this.btn4.Text = "0";
             this.btn4.UseVisualStyleBackColor = true;
-            this.btn4.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn4.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn3
             // 
@@ -542,7 +542,7 @@ namespace Calculator
             this.btn3.Tag = "3";
             this.btn3.Text = "0";
             this.btn3.UseVisualStyleBackColor = true;
-            this.btn3.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn3.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn2
             // 
@@ -554,7 +554,7 @@ namespace Calculator
             this.btn2.Tag = "2";
             this.btn2.Text = "0";
             this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn2.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // btn1
             // 
@@ -566,7 +566,7 @@ namespace Calculator
             this.btn1.Tag = "1";
             this.btn1.Text = "0";
             this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.dualToDecNetMaske);
+            this.btn1.Click += new System.EventHandler(this.DualToDecNetMaske);
             // 
             // textBoxNetMask1
             // 
@@ -576,8 +576,8 @@ namespace Calculator
             this.textBoxNetMask1.TabIndex = 246;
             this.textBoxNetMask1.Tag = "1";
             this.textBoxNetMask1.Text = "0";
-            this.textBoxNetMask1.TextChanged += new System.EventHandler(this.decToDualMaske);
-            this.textBoxNetMask1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.avoidWrongInput);
+            this.textBoxNetMask1.TextChanged += new System.EventHandler(this.DecToDualMaske);
+            this.textBoxNetMask1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvoidWrongInput);
             // 
             // IP_NetMask
             // 
@@ -585,9 +585,9 @@ namespace Calculator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBoxAnzahlHosts);
+            this.Controls.Add(this.textBoxNumberHosts);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBoxAnzahlIPAdressden);
+            this.Controls.Add(this.textBoxNumberIPAddreses);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxCIDR);
@@ -638,9 +638,9 @@ namespace Calculator
 
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxAnzahlHosts;
+        private System.Windows.Forms.TextBox textBoxNumberHosts;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxAnzahlIPAdressden;
+        private System.Windows.Forms.TextBox textBoxNumberIPAddreses;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCIDR;

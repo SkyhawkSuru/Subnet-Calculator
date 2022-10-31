@@ -19,7 +19,7 @@ namespace Calculator
             set { array32_IP[32] = value[32]; }
         }
         public List<Button> _theList_btn = new List<Button>();
-        string achtBitEinsIP, achtBitZweiIP, achtBitDreiIP, achtBitVierIP;
+        string eightBitOneIP, eightBitTwoIP, eightBitThreeIP, eightBitFourIP;
         private bool clearAll;
         public bool ClearAll
         {
@@ -54,9 +54,9 @@ namespace Calculator
         }
         private void Clear()
         {
-            achtBitEinsIP = "0"; achtBitZweiIP = "0"; achtBitDreiIP = "0"; achtBitVierIP = "0";
+            eightBitOneIP = "0"; eightBitTwoIP = "0"; eightBitThreeIP = "0"; eightBitFourIP = "0";
 
-            for (int i = 1; i < 33; i++) // mit 0 auffüllen
+            for (int i = 1; i < 33; i++) 
             {
                 array32_IP[i] = "0";
                 ValueArray[i] = "0";
@@ -67,14 +67,14 @@ namespace Calculator
             textBoxIP3.Text = "0";
             textBoxIP4.Text = "0";
         }
-        public void avoidWrongInput(object sender, KeyPressEventArgs e)
+        public void AvoidWrongInput(object sender, KeyPressEventArgs e)
         {
             if (!"0123456789".Contains(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
-        private void decToDualIP(object sender, EventArgs e)
+        private void DecToDualIP(object sender, EventArgs e)
         {
             TextBox txb = (TextBox)sender;
             try
@@ -93,14 +93,14 @@ namespace Calculator
                 {
                     txb.BackColor = Color.White;
 
-                    for (int i = 1; i < array32_IP.Length; i++) // mit 0 auffüllen 
+                    for (int i = 1; i < array32_IP.Length; i++)  
                     {
                         if (array32_IP[i] == null)
                         {
                             array32_IP[i] += "0";
                         }
                     }
-                    // Eingabe umwandel, umdrehen und in Buutons einfügen
+                    // input change, turn and insert Buttons 
                     string hlp = Convert.ToString(Convert.ToInt32(txb.Text), 2);
 
                     char[] btnx = hlp.ToCharArray();
@@ -109,7 +109,7 @@ namespace Calculator
                     Array.Reverse(btnx);
 
 
-                    // Array mit Nullen auffüllen die am Anfang stehen
+                    // fill Array with zero - stand in the front
                     for (int i = 0; i < btnx.Length; i++)
                     {
                         achtStellen[i] = btnx[i];
@@ -117,23 +117,22 @@ namespace Calculator
 
                     for (int i = btnx.Length; i < 8; i++)
                     {
-                        achtStellen[i] = '0'; // auffüllen
+                        achtStellen[i] = '0'; // fill
                     }
 
-                    // mit all button array abgleichen
-                    int btnRange = Convert.ToInt32(txb.Tag) * 8; // 1-32 möglich 
+                    // compare with all button array 
+                    int btnRange = Convert.ToInt32(txb.Tag) * 8; // 1-32 possible 
 
                     for (int i = btnRange; i > btnRange - 8; i--)
                     {
                         array32_IP[i] = Convert.ToString(achtStellen[btnRange - i]);
                     }
 
-                    // ip array 1-32 wird in Buttons 1-32 eingefügt    
+                    // ip array 1-32 insert to Buttons 1-32     
                     int count = 1;
 
                     foreach (Button button in _theList_btn)
-                    {
-                        // button.BackColor = Color.Blue; // the colour 
+                    {                       
                         button.Text = array32_IP[count];
 
                         count++;
@@ -142,11 +141,10 @@ namespace Calculator
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Only numbers");
             }
         }
-        private void blub(object sender)
+        private void RegisterHumanInput(object sender)
         {
             Button btn = (Button)sender;
             if (btn.Text == "0")
@@ -160,16 +158,16 @@ namespace Calculator
                 array32_IP[Convert.ToInt32(btn.Tag)] = "0";
             }
         }
-        private void dualToDecStartIP(object sender, EventArgs e)
+        private void DualToDecStartIP(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            achtBitEinsIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
-            achtBitZweiIP = "0";
-            achtBitDreiIP = "0";
-            achtBitVierIP = "0";
-            blub(sender);
+            eightBitOneIP = "0"; // String chain 8-bit (8-Stellen)
+            eightBitTwoIP = "0";
+            eightBitThreeIP = "0";
+            eightBitFourIP = "0";
+            RegisterHumanInput(sender);
 
-            // arry auffüllen
+            // fill arry 
             for (int i = 1; i < array32_IP.Length; i++)
             {
                 if (array32_IP[i] == null)
@@ -177,40 +175,40 @@ namespace Calculator
                     array32_IP[i] += "0";
                 }
             }
-            // int btnRange =  8; // 1-32 möglich 
+            // int btnRange =  8; // 1-32 possible 
             int btnTag = Convert.ToInt32(btn.Tag);
 
             if (btnTag > 0 && btnTag < 9)
             {
                 for (int i = 1; i < 9; i++)
                 {
-                    achtBitEinsIP += array32_IP[i];
+                    eightBitOneIP += array32_IP[i];
                 }
-                textBoxIP1.Text = Convert.ToString(Convert.ToInt64(achtBitEinsIP, 2));
+                textBoxIP1.Text = Convert.ToString(Convert.ToInt64(eightBitOneIP, 2));
             }
             else if (btnTag > 8 && btnTag < 17)
             {
                 for (int i = 9; i < 17; i++)
                 {
-                    achtBitZweiIP += array32_IP[i];
+                    eightBitTwoIP += array32_IP[i];
                 }
-                textBoxIP2.Text = Convert.ToString(Convert.ToInt64(achtBitZweiIP, 2));
+                textBoxIP2.Text = Convert.ToString(Convert.ToInt64(eightBitTwoIP, 2));
             }
             else if (btnTag > 16 && btnTag < 25)
             {
                 for (int i = 17; i < 25; i++)
                 {
-                    achtBitDreiIP += array32_IP[i];
+                    eightBitThreeIP += array32_IP[i];
                 }
-                textBoxIP3.Text = Convert.ToString(Convert.ToInt64(achtBitDreiIP, 2));
+                textBoxIP3.Text = Convert.ToString(Convert.ToInt64(eightBitThreeIP, 2));
             }
             else if (btnTag > 24 && btnTag < 33)
             {
                 for (int i = 25; i < 33; i++)
                 {
-                    achtBitVierIP += array32_IP[i];
+                    eightBitFourIP += array32_IP[i];
                 }
-                textBoxIP4.Text = Convert.ToString(Convert.ToInt64(achtBitVierIP, 2));
+                textBoxIP4.Text = Convert.ToString(Convert.ToInt64(eightBitFourIP, 2));
             }
         }
     }

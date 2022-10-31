@@ -33,11 +33,11 @@ namespace Calculator
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Subnets = new System.Windows.Forms.PictureBox();
             this.textBoxSubnet = new System.Windows.Forms.TextBox();
             this.textBoxHost = new System.Windows.Forms.TextBox();
             this.textBoxCIDR = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_binary = new System.Windows.Forms.PictureBox();
             this.textBoxNetID = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_NetID = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@ namespace Calculator
             this.lbl_B1 = new System.Windows.Forms.Label();
             this.lbl_IP = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.btn_ChangeLanguage = new System.Windows.Forms.Button();
             this.subnet_Table_AllSubnets1 = new Calculator.Subnet_Table_AllSubnets();
             this.subnet_Table_Count1 = new Calculator.Subnet_Table_Count();
             this.iP_HostMain = new Calculator.IP_Host();
@@ -56,8 +57,8 @@ namespace Calculator
             this.iP_NetMask1 = new Calculator.IP_NetMask();
             this.iP_Changeable1 = new Calculator.IP_Changeable();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Subnets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_binary)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,18 +76,18 @@ namespace Calculator
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(374, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 17);
+            this.label5.Size = new System.Drawing.Size(137, 17);
             this.label5.TabIndex = 75;
-            this.label5.Text = "Subnetz Rechner";
+            this.label5.Text = "Subnet Calculator";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 387);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 74;
-            this.label4.Text = "Letzter Host";
+            this.label4.Text = "Last Host";
             // 
             // label3
             // 
@@ -97,15 +98,15 @@ namespace Calculator
             this.label3.TabIndex = 73;
             this.label3.Text = "1.Host";
             // 
-            // pictureBox2
+            // pictureBox_Subnets
             // 
-            this.pictureBox2.Image = global::Calculator.Properties.Resources.bits;
-            this.pictureBox2.Location = new System.Drawing.Point(74, 423);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(736, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 72;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox_Subnets.Image = global::Calculator.Properties.Resources.bits_en;
+            this.pictureBox_Subnets.Location = new System.Drawing.Point(74, 423);
+            this.pictureBox_Subnets.Name = "pictureBox_Subnets";
+            this.pictureBox_Subnets.Size = new System.Drawing.Size(736, 50);
+            this.pictureBox_Subnets.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Subnets.TabIndex = 72;
+            this.pictureBox_Subnets.TabStop = false;
             // 
             // textBoxSubnet
             // 
@@ -137,15 +138,15 @@ namespace Calculator
             this.textBoxCIDR.Size = new System.Drawing.Size(210, 62);
             this.textBoxCIDR.TabIndex = 69;
             // 
-            // pictureBox3
+            // pictureBox_binary
             // 
-            this.pictureBox3.Image = global::Calculator.Properties.Resources.binar;
-            this.pictureBox3.Location = new System.Drawing.Point(74, 31);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(736, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 68;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox_binary.Image = global::Calculator.Properties.Resources.binar_en;
+            this.pictureBox_binary.Location = new System.Drawing.Point(74, 31);
+            this.pictureBox_binary.Name = "pictureBox_binary";
+            this.pictureBox_binary.Size = new System.Drawing.Size(736, 50);
+            this.pictureBox_binary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_binary.TabIndex = 68;
+            this.pictureBox_binary.TabStop = false;
             // 
             // textBoxNetID
             // 
@@ -156,8 +157,7 @@ namespace Calculator
             this.textBoxNetID.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxNetID.Size = new System.Drawing.Size(210, 103);
             this.textBoxNetID.TabIndex = 67;
-            this.textBoxNetID.Text = "Klick Me";
-            this.textBoxNetID.Click += new System.EventHandler(this.Texte);
+            this.textBoxNetID.Text = "Click the Button for Explanation";
             // 
             // button2
             // 
@@ -202,27 +202,27 @@ namespace Calculator
             this.lbl_B2.AutoSize = true;
             this.lbl_B2.Location = new System.Drawing.Point(7, 178);
             this.lbl_B2.Name = "lbl_B2";
-            this.lbl_B2.Size = new System.Drawing.Size(31, 13);
+            this.lbl_B2.Size = new System.Drawing.Size(36, 13);
             this.lbl_B2.TabIndex = 61;
-            this.lbl_B2.Text = "Binär";
+            this.lbl_B2.Text = "Binary";
             // 
             // lbl_Netmask
             // 
             this.lbl_Netmask.AutoSize = true;
             this.lbl_Netmask.Location = new System.Drawing.Point(7, 154);
             this.lbl_Netmask.Name = "lbl_Netmask";
-            this.lbl_Netmask.Size = new System.Drawing.Size(55, 13);
+            this.lbl_Netmask.Size = new System.Drawing.Size(49, 13);
             this.lbl_Netmask.TabIndex = 60;
-            this.lbl_Netmask.Text = "Netmaske";
+            this.lbl_Netmask.Text = "Netmask";
             // 
             // lbl_B1
             // 
             this.lbl_B1.AutoSize = true;
             this.lbl_B1.Location = new System.Drawing.Point(7, 111);
             this.lbl_B1.Name = "lbl_B1";
-            this.lbl_B1.Size = new System.Drawing.Size(31, 13);
+            this.lbl_B1.Size = new System.Drawing.Size(36, 13);
             this.lbl_B1.TabIndex = 59;
-            this.lbl_B1.Text = "Binär";
+            this.lbl_B1.Text = "Binary";
             // 
             // lbl_IP
             // 
@@ -242,6 +242,16 @@ namespace Calculator
             this.btn_clear.Text = "Clear All";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.Clear);
+            // 
+            // btn_ChangeLanguage
+            // 
+            this.btn_ChangeLanguage.Location = new System.Drawing.Point(1077, 58);
+            this.btn_ChangeLanguage.Name = "btn_ChangeLanguage";
+            this.btn_ChangeLanguage.Size = new System.Drawing.Size(75, 23);
+            this.btn_ChangeLanguage.TabIndex = 78;
+            this.btn_ChangeLanguage.Text = "DE";
+            this.btn_ChangeLanguage.UseVisualStyleBackColor = true;
+            this.btn_ChangeLanguage.Click += new System.EventHandler(this.Texte);
             // 
             // subnet_Table_AllSubnets1
             // 
@@ -336,7 +346,6 @@ namespace Calculator
         null,
         null,
         null};
-          
             // 
             // iP_NoChangeBC
             // 
@@ -477,16 +486,17 @@ namespace Calculator
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 861);
+            this.Controls.Add(this.btn_ChangeLanguage);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.subnet_Table_AllSubnets1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox_Subnets);
             this.Controls.Add(this.textBoxSubnet);
             this.Controls.Add(this.textBoxHost);
             this.Controls.Add(this.textBoxCIDR);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox_binary);
             this.Controls.Add(this.textBoxNetID);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_NetID);
@@ -506,8 +516,8 @@ namespace Calculator
             this.Name = "Form1";
             this.Text = "SubnetCalc By SkyhawkSuru ~ Github";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Subnets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_binary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,11 +528,11 @@ namespace Calculator
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox_Subnets;
         private System.Windows.Forms.TextBox textBoxSubnet;
         private System.Windows.Forms.TextBox textBoxHost;
         private System.Windows.Forms.TextBox textBoxCIDR;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox_binary;
         private System.Windows.Forms.TextBox textBoxNetID;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_NetID;
@@ -540,6 +550,7 @@ namespace Calculator
         private IP_Changeable iP_Changeable1;
         private System.Windows.Forms.Button btn_clear;
         private Subnet_Table_AllSubnets subnet_Table_AllSubnets1;
+        private System.Windows.Forms.Button btn_ChangeLanguage;
     }
 }
 

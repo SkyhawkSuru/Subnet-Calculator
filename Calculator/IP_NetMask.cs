@@ -14,11 +14,11 @@ namespace Calculator
     {
         public List<Button> _theList_btn = new List<Button>();
         public List<TextBox> _theList_textBox = new List<TextBox>();
-        string achtBitEinsM, achtBitZweiM, achtBitDreiM, achtBitVierM;
+        string eightBitOneM, eightBitTwoM, eightBitThreeM, eightBitFourM;
         int cidrValue = 0;
         int buttonTagValueCidrOne = 0;
         int buttonTagValueCidrZero = 0;
-        public double HostsAnzahl = 0;
+        public double HostsNumber = 0;
         private bool clearAll;
         public bool ClearAll
         {
@@ -54,9 +54,9 @@ namespace Calculator
         }
         private void Clear()
         {
-            achtBitEinsM = "0"; achtBitZweiM = "0"; achtBitDreiM = "0"; achtBitVierM = "0";
+            eightBitOneM = "0"; eightBitTwoM = "0"; eightBitThreeM = "0"; eightBitFourM = "0";
 
-            for (int i = 1; i < 33; i++) // mit 0 auffüllen
+            for (int i = 1; i < 33; i++) // fill with "0" 
             {
                 array32_NetMask[i] = "0";
                 ValueArray[i] = "0";
@@ -71,13 +71,13 @@ namespace Calculator
             cidrValue = 0;
             buttonTagValueCidrOne = 0;
             buttonTagValueCidrZero = 0;
-            HostsAnzahl = 0;
+            HostsNumber = 0;
 
             textBoxCIDR.Text = "0";
-            textBoxAnzahlIPAdressden.Text = "0";
-            textBoxAnzahlHosts.Text = "0";
+            textBoxNumberIPAddreses.Text = "0";
+            textBoxNumberHosts.Text = "0";
         }
-        public void avoidWrongInput(object sender, KeyPressEventArgs e)
+        public void AvoidWrongInput(object sender, KeyPressEventArgs e)
         {
             if (!"0123456789".Contains(e.KeyChar))
             {
@@ -103,22 +103,22 @@ namespace Calculator
         {
             int x = 32 - cidrValue;
             int value = 2;
-            HostsAnzahl = Math.Pow(value, x);
-            textBoxAnzahlIPAdressden.Text = Convert.ToString(HostsAnzahl);
+            HostsNumber = Math.Pow(value, x);
+            textBoxNumberIPAddreses.Text = Convert.ToString(HostsNumber);
             HostAnzahl(sender, e);
         }
         private void HostAnzahl(object sender, EventArgs e)
         {
-            double anzahl = HostsAnzahl - 2;
-            if (anzahl >= 2)
+            double number = HostsNumber - 2;
+            if (number >= 2)
             {
-                textBoxAnzahlHosts.Text = Convert.ToString(anzahl);
+                textBoxNumberHosts.Text = Convert.ToString(number);
             }
             else
-                textBoxAnzahlHosts.Text = "zu wenig IP Adressen";
+                textBoxNumberHosts.Text = "zu wenig IP Adressen";
         }
 
-        private void blubM(object sender)
+        private void RegisterHumanInput(object sender)
         {
             Button btn = (Button)sender;
 
@@ -131,21 +131,21 @@ namespace Calculator
             else
             {
                 btn.Text = "0";
-                array32_NetMask[Convert.ToInt32(btn.Tag)] = "0"; // 1-8 + 9-16 +17-24 + 25-32 extra funktion mit schleife
+                array32_NetMask[Convert.ToInt32(btn.Tag)] = "0"; 
                 buttonTagValueCidrZero = Convert.ToInt32(btn.Tag);
             }
         }
-        private void dualToDecNetMaske(object sender, EventArgs e)
+        private void DualToDecNetMaske(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            achtBitEinsM = "0"; // zusammengesetzter String achtbit (8-Stellen)
-            achtBitZweiM = "0";
-            achtBitDreiM = "0";
-            achtBitVierM = "0";
-            blubM(sender);
+            eightBitOneM = "0"; // String chain 8-bit (8-Stellen)
+            eightBitTwoM = "0";
+            eightBitThreeM = "0";
+            eightBitFourM = "0";
+            RegisterHumanInput(sender);
 
-            // arry auffüllen
-            if (btn.Text == "1") //Test
+            // fill arry 
+            if (btn.Text == "1") 
             {
                 for (int i = 1; i <= buttonTagValueCidrOne; i++)
                 {
@@ -160,43 +160,43 @@ namespace Calculator
                 }
             }
 
-            // int btnRange =  8; // 1-32 möglich 
+            // int btnRange =  8; // 1-32 possible 
             int btnTag = Convert.ToInt32(btn.Tag);
 
             if (btnTag > 0 && btnTag < 9)
             {
                 for (int i = 1; i < 9; i++)
                 {
-                    achtBitEinsM += array32_NetMask[i];
+                    eightBitOneM += array32_NetMask[i];
                 }
-                textBoxNetMask1.Text = Convert.ToString(Convert.ToInt64(achtBitEinsM, 2));
+                textBoxNetMask1.Text = Convert.ToString(Convert.ToInt64(eightBitOneM, 2));
             }
             else if (btnTag > 8 && btnTag < 17)
             {
                 for (int i = 9; i < 17; i++)
                 {
-                    achtBitZweiM += array32_NetMask[i];
+                    eightBitTwoM += array32_NetMask[i];
                 }
-                textBoxNetMask2.Text = Convert.ToString(Convert.ToInt64(achtBitZweiM, 2));
+                textBoxNetMask2.Text = Convert.ToString(Convert.ToInt64(eightBitTwoM, 2));
             }
             else if (btnTag > 16 && btnTag < 25)
             {
                 for (int i = 17; i < 25; i++)
                 {
-                    achtBitDreiM += array32_NetMask[i];
+                    eightBitThreeM += array32_NetMask[i];
                 }
-                textBoxNetMask3.Text = Convert.ToString(Convert.ToInt64(achtBitDreiM, 2));
+                textBoxNetMask3.Text = Convert.ToString(Convert.ToInt64(eightBitThreeM, 2));
             }
             else if (btnTag > 24 && btnTag < 33)
             {
                 for (int i = 25; i < 33; i++)
                 {
-                    achtBitVierM += array32_NetMask[i];
+                    eightBitFourM += array32_NetMask[i];
                 }
-                textBoxNetMask4.Text = Convert.ToString(Convert.ToInt64(achtBitVierM, 2));
+                textBoxNetMask4.Text = Convert.ToString(Convert.ToInt64(eightBitFourM, 2));
             }
 
-            // CIDR zählen
+            // count CIDR 
             int countOne = 0;
 
             for (int i = 1; i < array32_NetMask.Length; i++)
@@ -211,7 +211,7 @@ namespace Calculator
             textBoxCIDR.Text = Convert.ToString(countOne);
             cidrValue = countOne;
         }
-        private void decToDualMaske(object sender, EventArgs e)
+        private void DecToDualMaske(object sender, EventArgs e)
         {
             TextBox txb = (TextBox)sender;
             try
@@ -231,14 +231,14 @@ namespace Calculator
                 {
                     txb.BackColor = Color.White;
 
-                    for (int i = 1; i < array32_NetMask.Length; i++) // mit 0 auffüllen
+                    for (int i = 1; i < array32_NetMask.Length; i++) // fill with "0"
                     {
                         if (array32_NetMask[i] == null)
                         {
                             array32_NetMask[i] += "0";
                         }
                     }
-                    // Eingabe umwandel, umdrehen und in Buttons einfügen
+                    // input change, turn and insert to Buttons
                     string hlp = Convert.ToString(Convert.ToInt32(txb.Text), 2);
 
                     char[] btnx = hlp.ToCharArray();
@@ -247,7 +247,7 @@ namespace Calculator
                     Array.Reverse(btnx);
 
 
-                    // Array mit Nullen auffüllen die am Anfang stehen
+                    // fill Array with zero stand in the front
                     for (int i = 0; i < btnx.Length; i++)
                     {
                         achtStellen[i] = btnx[i];
@@ -255,18 +255,18 @@ namespace Calculator
 
                     for (int i = btnx.Length; i < 8; i++)
                     {
-                        achtStellen[i] = '0'; // auffüllen
+                        achtStellen[i] = '0'; // fill
                     }
 
-                    // mit all button array abgleichen
-                    int btnRange = Convert.ToInt32(txb.Tag) * 8; // 1-32 möglich 
+                    // compare all button array 
+                    int btnRange = Convert.ToInt32(txb.Tag) * 8; // 1-32 possible 
 
                     for (int i = btnRange; i > btnRange - 8; i--)
                     {
                         array32_NetMask[i] = Convert.ToString(achtStellen[btnRange - i]);
                     }
 
-                    // ip array 1-32 wird in Buttons 1-32 eingefügt    
+                    // ip array 1-32 insert in Buttons 1-32     
                     int count = 1;
                     foreach (Button button in _theList_btn)
                     {
@@ -290,7 +290,7 @@ namespace Calculator
                     textBoxCIDR.Text = "0";
                 }
                 int cidr = Convert.ToInt32(textBoxCIDR.Text);
-                cidrValue = cidr; // cidr als variable überflüssig? -------------------------------------------------------->
+                cidrValue = cidr; 
 
                 if (cidr > 32 || cidr < 0)
                 {
@@ -318,7 +318,7 @@ namespace Calculator
 
                         count++;
                     }
-                    // --- Ausgabe Textboxen ---
+                    // --- Output Textboxes ---
                     string achtBitEinsMaske = "";
                     for (int i = 1; i < 9; i++)
                     {

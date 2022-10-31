@@ -63,9 +63,9 @@ namespace Calculator.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap binar {
+        internal static System.Drawing.Bitmap binar_de {
             get {
-                object obj = ResourceManager.GetObject("binar", resourceCulture);
+                object obj = ResourceManager.GetObject("binar_de", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,29 @@ namespace Calculator.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bits {
+        internal static System.Drawing.Bitmap binar_en {
             get {
-                object obj = ResourceManager.GetObject("bits", resourceCulture);
+                object obj = ResourceManager.GetObject("binar_en", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bits_de {
+            get {
+                object obj = ResourceManager.GetObject("bits_de", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bits_en {
+            get {
+                object obj = ResourceManager.GetObject("bits_en", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -53,6 +53,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="German.cs" />
     <Compile Include="IP_Changeable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,10 +137,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\binar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bits.png" />
+    <Content Include="Resources\binar_de.png" />
+    <Content Include="Resources\binar_en.png" />
+    <Content Include="Resources\bits_de.png" />
+    <Content Include="Resources\bits_en.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

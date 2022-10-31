@@ -13,13 +13,13 @@ namespace Calculator
 {
     public partial class Subnet_Table_AllSubnets : UserControl
     {
-        //ori
+        //original
         public string[] array32_IP_Sub_NetID = new string[33]; // come in
         public int hostnumber; // come in
         public int SubnetNumber; // come in
         public int CIDR; // come in
 
-        string achtBitEinsIP, achtBitZweiIP, achtBitDreiIP, achtBitVierIP;
+        string eightBitOneIP, eightBitTwoIP, eightBitThreeIP, eightBitFourIP;
 
         string[,] NetIDHost1HostLBC = new string[4, 33];
         string[] HelpNetIDHost1HostLBC = new string[4];
@@ -52,7 +52,7 @@ namespace Calculator
             HelpNetIDHost1HostLBC[1] = "";
             HelpNetIDHost1HostLBC[2] = "";
             HelpNetIDHost1HostLBC[3] = "";
-            achtBitEinsIP = ""; achtBitZweiIP = ""; achtBitDreiIP = ""; achtBitVierIP = "";
+            eightBitOneIP = ""; eightBitTwoIP = ""; eightBitThreeIP = ""; eightBitFourIP = "";
             count = 0;
             for (int i = 0; i < 33; i++)
             {
@@ -67,14 +67,14 @@ namespace Calculator
         {
             int hostNumberint;
             string hostNumber;
-            string binarNetIDnew = "";
-            string binarHostOne = "";
-            string binarHostLast = "";
-            string binarNetID = "";
-            string binarBC = "";
+            string binaryNetIDnew = "";
+            string binaryHostOne = "";
+            string binaryHostLast = "";
+            string binaryNetID = "";
+            string binaryBC = "";
             string one = "1";
             string two = "10";
-            int ergebnisHostOne;
+            int resultHostOne;
             //-------------------------------------
             int countBC = count + 1;
             int hostNumberintBC = 0;
@@ -90,33 +90,33 @@ namespace Calculator
             for (int i = 1; i < 33; i++) //stay
 
             {
-                binarNetID += array32_IP_Sub_NetID[i];
+                binaryNetID += array32_IP_Sub_NetID[i];
             }
             //-------------------------------------------------------------------------------------------------------------------------
-            int ergebnisNetID = Convert.ToInt32(hostNumber, 2) + Convert.ToInt32(binarNetID, 2);
+            int resultNetID = Convert.ToInt32(hostNumber, 2) + Convert.ToInt32(binaryNetID, 2);
 
-            ergebnisHostOne = Convert.ToInt32(binarNetID, 2) + Convert.ToInt32(one, 2) + Convert.ToInt32(hostNumber, 2);
+            resultHostOne = Convert.ToInt32(binaryNetID, 2) + Convert.ToInt32(one, 2) + Convert.ToInt32(hostNumber, 2);
 
-            int ergebnisHostLast = Convert.ToInt32(binarNetID, 2) + Convert.ToInt32(hostNumberBC, 2) - Convert.ToInt32(two, 2); // drauf ausgelegt das count mit 1 beginnt
-            int ergebnisBC = Convert.ToInt32(binarNetID, 2) + Convert.ToInt32(hostNumberBC, 2) - Convert.ToInt32(one, 2);
+            int ergebnisHostLast = Convert.ToInt32(binaryNetID, 2) + Convert.ToInt32(hostNumberBC, 2) - Convert.ToInt32(two, 2); // count starts with 1 !
+            int ergebnisBC = Convert.ToInt32(binaryNetID, 2) + Convert.ToInt32(hostNumberBC, 2) - Convert.ToInt32(one, 2);
 
-            binarNetIDnew = Convert.ToString(Convert.ToInt32(ergebnisNetID), 2);
-            binarHostOne = Convert.ToString(Convert.ToInt32(ergebnisHostOne), 2);
-            binarHostLast = Convert.ToString(Convert.ToInt32(ergebnisHostLast), 2);
-            binarBC = Convert.ToString(Convert.ToInt32(ergebnisBC), 2);
+            binaryNetIDnew = Convert.ToString(Convert.ToInt32(resultNetID), 2);
+            binaryHostOne = Convert.ToString(Convert.ToInt32(resultHostOne), 2);
+            binaryHostLast = Convert.ToString(Convert.ToInt32(ergebnisHostLast), 2);
+            binaryBC = Convert.ToString(Convert.ToInt32(ergebnisBC), 2);
 
             //--------------------------------------------------------------------------------------------------------------------------------------------------------
             //umwandeln - kann man den string direkt drehen und umwandlung in char überflüssig ? string als array behandeln...
-            char[] newBinaryNetIDnew = binarNetIDnew.ToCharArray();
-            char[] newBinaryHostOne = binarHostOne.ToCharArray();
-            char[] newBinaryHostLast = binarHostLast.ToCharArray();
-            char[] newBinaryBC = binarBC.ToCharArray();
+            char[] newBinaryNetIDnew = binaryNetIDnew.ToCharArray();
+            char[] newBinaryHostOne = binaryHostOne.ToCharArray();
+            char[] newBinaryHostLast = binaryHostLast.ToCharArray();
+            char[] newBinaryBC = binaryBC.ToCharArray();
             Array.Reverse(newBinaryNetIDnew);
             Array.Reverse(newBinaryHostOne);
             Array.Reverse(newBinaryHostLast);
             Array.Reverse(newBinaryBC);
 
-            for (int i = 1; i < 33; i++) // alles auf null setzen
+            for (int i = 1; i < 33; i++) // set all to zero
             {
                 NetIDHost1HostLBC[0, i] = "0";
                 NetIDHost1HostLBC[1, i] = "0";
@@ -134,7 +134,7 @@ namespace Calculator
             }
             return count;
         }
-        private void dualToDecStartIPHostOne(object sender, EventArgs e)
+        private void DualToDecStartIPHostOne(object sender, EventArgs e)
         {
             Clear();
             if (CIDR >= 30)
@@ -155,31 +155,31 @@ namespace Calculator
 
                     for (int b = 0; b < 4; b++)
                     {
-                        achtBitEinsIP = "0"; // zusammengesetzter String achtbit (8-Stellen)
-                        achtBitZweiIP = "0";
-                        achtBitDreiIP = "0";
-                        achtBitVierIP = "0";
+                        eightBitOneIP = "0"; // String chain 8-bit (8-Stellen)
+                        eightBitTwoIP = "0";
+                        eightBitThreeIP = "0";
+                        eightBitFourIP = "0";
 
                         for (int i = 1; i < 9; i++)
                         {
-                            achtBitEinsIP += NetIDHost1HostLBC[b, i];
+                            eightBitOneIP += NetIDHost1HostLBC[b, i];
                         }
-                        HelpNetIDHost1HostLBC[b] = Convert.ToString(Convert.ToInt64(achtBitEinsIP, 2));
+                        HelpNetIDHost1HostLBC[b] = Convert.ToString(Convert.ToInt64(eightBitOneIP, 2));
                         for (int i = 9; i < 17; i++)
                         {
-                            achtBitZweiIP += NetIDHost1HostLBC[b, i];
+                            eightBitTwoIP += NetIDHost1HostLBC[b, i];
                         }
-                        HelpNetIDHost1HostLBC[b] += "." + Convert.ToString(Convert.ToInt64(achtBitZweiIP, 2));
+                        HelpNetIDHost1HostLBC[b] += "." + Convert.ToString(Convert.ToInt64(eightBitTwoIP, 2));
                         for (int i = 17; i < 25; i++)
                         {
-                            achtBitDreiIP += NetIDHost1HostLBC[b, i];
+                            eightBitThreeIP += NetIDHost1HostLBC[b, i];
                         }
-                        HelpNetIDHost1HostLBC[b] += "." + Convert.ToString(Convert.ToInt64(achtBitDreiIP, 2));
+                        HelpNetIDHost1HostLBC[b] += "." + Convert.ToString(Convert.ToInt64(eightBitThreeIP, 2));
                         for (int i = 25; i < 33; i++)
                         {
-                            achtBitVierIP += NetIDHost1HostLBC[b, i];
+                            eightBitFourIP += NetIDHost1HostLBC[b, i];
                         }
-                        HelpNetIDHost1HostLBC[b] += "." + Convert.ToString(Convert.ToInt64(achtBitVierIP, 2));
+                        HelpNetIDHost1HostLBC[b] += "." + Convert.ToString(Convert.ToInt64(eightBitFourIP, 2));
                     }
 
                     dataGridView1.Rows.Add(Convert.ToString(a + 1), HelpNetIDHost1HostLBC[0], HelpNetIDHost1HostLBC[1], HelpNetIDHost1HostLBC[2], HelpNetIDHost1HostLBC[3]);

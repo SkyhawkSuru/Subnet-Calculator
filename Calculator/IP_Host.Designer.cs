@@ -48,7 +48,7 @@ namespace Calculator
             this.button1.TabIndex = 201;
             this.button1.Text = "Hosts";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.dualToDecStartIPHostOne);
+            this.button1.Click += new System.EventHandler(this.DualToDecStartIPHostOne);
             // 
             // textBoxHostLast4
             // 

@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace Calculator
 {
     public partial class Subnet_Table_Count : UserControl
-    {
-        // public double HostsAnzahl; 
+    {        
         public int CIDR; // come in
         public int SubnetNumber;
         public int HostnumberForTable; // get out
@@ -38,9 +37,9 @@ namespace Calculator
         }
         private void Clear()
         {
-            textBoxSubnetzAnzahl.Text = "0";
-            textBoxsubnetzAnzahlIP.Text = "0";
-            textBoxsubnetzAnzahlHost.Text = "0";            
+            textBoxSubnetNumber.Text = "0";
+            textBoxSubnetNumberIP.Text = "0";
+            textBoxsubnetNumberHost.Text = "0";            
             CIDR = 0;
             SubnetNumber = 0;
             HostnumberForTable = 0;
@@ -56,58 +55,58 @@ namespace Calculator
             if (this.Text_Changed != null)
                 this.Text_Changed(this, e);
         }
-        private void Tabelle2(object sender, EventArgs e)
+        private void Table(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
-            textBoxSubnetzAnzahl.BackColor = Color.White;
+            textBoxSubnetNumber.BackColor = Color.White;
             try
             {
                 if (CIDR >= 30)
                 {
-                    textBoxSubnetzAnzahl.Text = "zu wenig IPs"; // letzte tabelle geht noch
-                    textBoxsubnetzAnzahlIP.Text = "0";
-                    textBoxsubnetzAnzahlHost.Text = "0";
+                    textBoxSubnetNumber.Text = "zu wenig IPs"; 
+                    textBoxSubnetNumberIP.Text = "0";
+                    textBoxsubnetNumberHost.Text = "0";
                 }
-                else if (Convert.ToInt32(textBoxSubnetzAnzahl.Text) < 1)
+                else if (Convert.ToInt32(textBoxSubnetNumber.Text) < 1)
                 {
-                    //cidr darf nicht gelöscht werden
+                    //do not delete cidr 
                     HostnumberForTable = 0;
-                    textBoxSubnetzAnzahl.Text = "0";
-                    textBoxsubnetzAnzahlIP.Text = "0";
-                    textBoxsubnetzAnzahlHost.Text = "0";
+                    textBoxSubnetNumber.Text = "0";
+                    textBoxSubnetNumberIP.Text = "0";
+                    textBoxsubnetNumberHost.Text = "0";
                     dataGridView2.Rows.Clear();
                 }
                 else
                 {
-                    double ergebnis = 0;
+                    double result = 0;
 
                     int bits = 32 - CIDR;
-                    double IPHostAnzahl = Math.Pow(2, bits);
-                    int MaxIP = Convert.ToInt32(IPHostAnzahl) / 4;
+                    double IPHostNumber = Math.Pow(2, bits);
+                    int MaxIP = Convert.ToInt32(IPHostNumber) / 4;
 
-                    int eingabeSubnetnumber = Convert.ToInt32(textBoxSubnetzAnzahl.Text);
+                    int inputSubnetNumber = Convert.ToInt32(textBoxSubnetNumber.Text);
 
-                    if (eingabeSubnetnumber <= MaxIP)
+                    if (inputSubnetNumber <= MaxIP)
                     {
                         for (int i = 1; i < bits - 1; i++)
                         {
                             double helpHosts = Math.Pow(2, i);
-                            if (eingabeSubnetnumber <= helpHosts)
+                            if (inputSubnetNumber <= helpHosts)
                             {
-                                ergebnis = IPHostAnzahl / helpHosts;
+                                result = IPHostNumber / helpHosts;
                                 SubnetNumber = Convert.ToInt32(helpHosts);
-                                HostnumberForTable = Convert.ToInt32(ergebnis);
-                                textBoxsubnetzAnzahlIP.Text = Convert.ToString(ergebnis);
-                                textBoxsubnetzAnzahlHost.Text = Convert.ToString(ergebnis - 2);//new
+                                HostnumberForTable = Convert.ToInt32(result);
+                                textBoxSubnetNumberIP.Text = Convert.ToString(result);
+                                textBoxsubnetNumberHost.Text = Convert.ToString(result - 2);//new
                                 break;
                             }
                         }
                     }
                     else
                     {
-                        textBoxSubnetzAnzahl.BackColor = Color.Red;
-                        textBoxsubnetzAnzahlIP.Text = "to high";
-                        textBoxsubnetzAnzahlHost.Text = "to high";
+                        textBoxSubnetNumber.BackColor = Color.Red;
+                        textBoxSubnetNumberIP.Text = "to high";
+                        textBoxsubnetNumberHost.Text = "to high";
                     }
                     //-----------------------------------------------------------
                     //Datagridview
@@ -121,16 +120,16 @@ namespace Calculator
                         count++;
                     }
 
-                    // Ausgabe
+                    // Output
                     for (int i = 0; i < bits - 2; i++)
                     {
                         dataGridView2.Rows.Add(bitsSubNetze[i, 0], bitsSubNetze[i, 1]);
                     }
 
-                    // EingabeAnzahlSubnetze 
+                    // InputbeNumberSubnet 
                     foreach (DataGridViewRow row in dataGridView2.Rows)
                     {
-                        if (Convert.ToInt32(textBoxSubnetzAnzahl.Text) < Convert.ToInt32(row.Cells[1].Value) || Convert.ToInt32(textBoxSubnetzAnzahl.Text) == Convert.ToInt32(row.Cells[1].Value))
+                        if (Convert.ToInt32(textBoxSubnetNumber.Text) < Convert.ToInt32(row.Cells[1].Value) || Convert.ToInt32(textBoxSubnetNumber.Text) == Convert.ToInt32(row.Cells[1].Value))
                         {
                             row.DefaultCellStyle.BackColor = Color.LightGreen;
                             break;
